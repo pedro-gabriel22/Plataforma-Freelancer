@@ -1,0 +1,37 @@
+.container-card-free{
+    
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 10px;
+    width: 400px;
+
+}
+.container-card-free-filho{
+margin: 10px;
+padding: 20px;
+
+background-color: rgb(216, 216, 216);
+border-radius: 20px 0;
+box-shadow:
+2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+}
+.card-titulo{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    font-family: sans-serif;
+}
+.card-descricao{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    font-family: sans-serif;
+}

@@ -6,7 +6,7 @@ import Axios from "axios";
 import "./App.css";
 
 
-const page2 = () =>  {
+const Page2 = () =>  {
    
     const handlerClickLogin = (values) => {
       Axios.post("http://localhost:3001/login",{
@@ -68,5 +68,5 @@ const page2 = () =>  {
     );
   }
   
-  export default page2;
+  export default Page2;
   

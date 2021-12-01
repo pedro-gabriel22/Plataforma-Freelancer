@@ -34,12 +34,14 @@ ap.post("/register", (req, res)=>{
                     if(err){
                         res.send(err)
                     }
-                    res.send({msg:"cadastrado com sucesso"})
+                     res.send({msg:"cadastrado com sucesso"})
+                    
                 })
             })
             
         }else{
-            res.send({msg:"usuario ja cadastrado"} );
+             res.send({msg:"usuario ja cadastrado"});
+         
         }
     })
 })
@@ -56,8 +58,9 @@ ap.post("/login", (req,res)=>{
         if(result.length > 0){
             bcrypt.compare(password,result[0].password,(err, result)=>{
                 if(result){
-                     res.send({msg:"usuario logado com sucesso"})
-                    // res.sendFile(__dirname + "./login/src/teste")
+                    res.send({msg:"entrou com sucesso"})
+                   
+                    
                 }else{
                     res.send({msg:"senha incorreta"})
                 }
@@ -66,6 +69,26 @@ ap.post("/login", (req,res)=>{
            
         }else{
             res.send({msg:"Conta não encontrada"})
+        }
+    })
+})
+
+ap.post("/card", (req,res)=>{
+    const {titulo} = req.body
+    const {descricao} = req.body
+
+    db.query("INSERT INTO cards (titulo,descricao) VALUES (?,?)",[titulo,descricao],(err,result)=>{
+        console.log(err);
+    })
+})
+
+ap.get("/getCards", (req,res)=>{
+    let sql = "SELECT * FROM cards"
+
+    db.query(sql,(err,result)=>{
+        if(err)console.log(err);
+        else{
+            res.send(result)
         }
     })
 })
